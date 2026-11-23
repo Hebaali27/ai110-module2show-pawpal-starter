@@ -1,0 +1,34 @@
+classDiagram
+    Owner "1" *-- "0..*" Pet
+    Pet "1" *-- "0..*" Task
+    Scheduler --> Owner
+    class Owner {
+        name
+        minutes_available
+        pets
+        add_pet()
+        get_all_tasks()
+    }
+    class Pet {
+        name
+        species
+        tasks
+        add_task()
+    }
+    class Task {
+        description
+        due
+        duration
+        priority
+        frequency
+        completed
+        mark_complete()
+    }
+    class Scheduler {
+        owner
+        mark_task_complete(pet, task)
+        sort_by_time()
+        filter_tasks()
+        conflicts()
+        daily_plan()
+    }
